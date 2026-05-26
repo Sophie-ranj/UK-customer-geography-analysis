@@ -35,23 +35,6 @@ The project uses two CSV files:
 - pandas
 - matplotlib
 
-## Project Structure
-
-```text
-customer-geography-spend-analysis/
-│
-├── data/
-│   ├── addresses.csv
-│   └── cities.csv
-│
-├── outputs/
-│   └── total_customer_spend_by_city.png
-│
-├── chapter_2_encoding_geographies.py
-├── requirements.txt
-└── README.md
-```
-
 ## Data Preparation
 
 The first step was to inspect the dataset and check whether the address and spending fields were usable for analysis.
@@ -196,57 +179,11 @@ Possible improvements for a more accurate version:
 - Documenting assumptions and limitations
 - Applying a results-driven analysis approach
 
-## How to Run the Project
-
-Clone the repository:
-
-```bash
-git clone https://github.com/YOUR-USERNAME/customer-geography-spend-analysis.git
-cd customer-geography-spend-analysis
-```
-
-Create and activate a virtual environment:
-
-```bash
-python -m venv .venv
-```
-
-On Windows:
-
-```bash
-.venv\Scripts\activate
-```
-
-On macOS or Linux:
-
-```bash
-source .venv/bin/activate
-```
-
-Install the required libraries:
-
-```bash
-pip install -r requirements.txt
-```
-
-Run the Python script:
-
-```bash
-python chapter_2_encoding_geographies.py
-```
-
-## Requirements
-
-```text
-pandas
-matplotlib
-```
 
 ## Project Source
 
 This project is based on Chapter 2, **Encoding Geographies**, from *The Well-Grounded Data Analyst* by David Asboth.
 
-I implemented the chapter workflow in PyCharm and adapted it as a portfolio project to demonstrate practical data cleaning, feature engineering, and business-focused analysis in Python.
 
 ## Author
 
