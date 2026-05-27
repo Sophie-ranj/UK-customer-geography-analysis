@@ -51,7 +51,7 @@ Main preparation steps:
 ```python
 customers = pd.read_csv("./data/addresses.csv")
 customers = customers.dropna(subset=["address"])
-customers["address_clean"] = customers["address"].str.upper()
+customers["clean_add"] = customers["address"].str.upper()
 ```
 
 ## City Extraction Logic
@@ -67,35 +67,18 @@ City list cleaning steps:
 - Converted city names to uppercase
 - Used the cleaned list as a reference table for matching
 
-```python
-cities = pd.read_csv("./data/cities.csv", header=None, names=["city"])
-
-countries_to_remove = ["England", "Scotland", "Wales", "Northern Ireland"]
-cities_to_remove = cities[cities["city"].isin(countries_to_remove)].index
-cities = cities.drop(index=cities_to_remove)
-
-cities["city"] = cities["city"].str.replace("*", "", regex=False)
-cities["city"] = cities["city"].str.upper()
 ```
 
 ## Derived Columns
 
 | Column | Purpose |
 | --- | --- |
-| `address_clean` | Standardized uppercase version of the address |
+| `clean_add` | Standardized uppercase version of the address |
 | `address_lines` | Number of lines in each address |
 | `city` | Extracted city name based on the UK city reference list |
 
 Addresses that could not be matched to a city were categorized as `OTHER`.
 
-```python
-for city in cities["city"].values:
-    customers.loc[
-        customers["address_clean"].str.contains(f"\n{city},", regex=True),
-        "city"
-    ] = city
-
-customers["city"] = customers["city"].fillna("OTHER")
 ```
 
 ## Manual Data Quality Fix
@@ -106,7 +89,7 @@ A manual adjustment was made to correctly classify these records.
 
 ```python
 customers.loc[
-    customers["address_clean"].str.contains("\nHULL,", regex=True),
+    customers["clean_add"].str.contains("\nHULL,", regex=True),
     "city"
 ] = "HULL"
 ```
