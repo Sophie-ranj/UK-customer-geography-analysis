@@ -2,7 +2,7 @@
 
 This project analyzes UK customer address data to understand how customer spending is distributed across cities, with a specific focus on comparing London-based customers with the rest of the United Kingdom.
 
-The main challenge in this project is that the dataset does not contain a clean `city` column. Instead, each customer address is stored as free text, so the city must be extracted using Python text-cleaning and matching logic.
+The main challenge in this project is that the dataset lacks a clean `city` column. Instead, each customer address is stored as free text, so the city must be extracted using Python text-cleaning and matching logic.
 
 ## Project Goal
 
@@ -102,7 +102,7 @@ customers["city"] = customers["city"].fillna("OTHER")
 
 During validation, the official city name `KINGSTON-UPON-HULL` did not appear in the extracted city results because many addresses used the shorter name `HULL`.
 
-A manual adjustment was added to classify these records correctly.
+A manual adjustment was made to correctly classify these records.
 
 ```python
 customers.loc[
@@ -136,7 +136,7 @@ The project also compares:
 
 A horizontal bar chart was created to show the top 20 cities by total customer spending.
 
-![Total Customer Spend by City](outputs/total_customer_spend_by_city.png)
+![Total Customer Spend by City](images/Chart.png)
 
 ## Key Findings
 
