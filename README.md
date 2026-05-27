@@ -145,40 +145,6 @@ A horizontal bar chart was created to show the top 20 cities by total customer s
 - London customers generate nearly as much spending as all other identified major UK cities combined.
 - The analysis suggests the customer base is London-centric, but the result should be interpreted carefully because of the large `OTHER` category.
 
-## Limitations
-
-This first version uses a simple and explainable city-matching approach. It is useful for a minimum viable analysis, but it has limitations:
-
-- It only uses official UK city names.
-- Large towns, boroughs, and districts may be grouped as `OTHER`.
-- Some London-area addresses may not contain the word `London`.
-- Address formats are inconsistent, so a fixed-position extraction method is not reliable.
-- Some city names may appear in street names rather than city fields.
-
-## Future Improvements
-
-Possible improvements for a more accurate version:
-
-- Use a UK postcode lookup dataset.
-- Add towns, boroughs, and districts to the reference list.
-- Compare city spending against population data.
-- Calculate spend per capita by city or region.
-- Add regional grouping, such as South East England or Greater London.
-- Package the cleaning logic into reusable Python functions.
-- Add unit tests for city extraction edge cases.
-
-## Skills Demonstrated
-
-- Data cleaning with pandas
-- Working with messy text data
-- Creating derived columns
-- Using a reference dataset for classification
-- Handling missing values
-- Grouping and aggregating data
-- Creating visualizations with matplotlib
-- Documenting assumptions and limitations
-- Applying a results-driven analysis approach
-
 
 ## Project Source
 
